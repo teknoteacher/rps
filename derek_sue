@@ -1,0 +1,33 @@
+import random
+
+#this first to allow testing
+rsp = ['Rock', 'Paper', 'Scissors']
+computer = random.choice(rsp)
+print("Computer chose: ",computer)
+
+#player input
+player = input("Enter choice Rock, Paper or Scissors: ")
+print("You chose: ", player)
+
+#Computer choice
+#rsp = ['Rock', 'Paper', 'Scissors']
+#computer = random.choice(rsp)
+#print("Computer chose: ",computer)
+
+#all options
+if player == computer:
+    print("Draw")
+elif rsp == "Rock" and player == "Paper":
+    print("Player wins")
+elif rsp == "Rock" and player == "Scissors":
+    print("computer wins")
+elif rsp == "Paper" and player == "Rock":
+    print("Computer wins")
+elif rsp == "Paper" and player == "Scissors":
+    print("Player wins")
+elif rsp == "Scissors" and player == "Rock":
+    print("Player wins")
+elif rsp == "Scissors" and player == "Paper":
+    print("Computer wins")
+else:
+    print("End")
