@@ -1,0 +1,39 @@
+#Rock Paper Scissors James, Debra, Sue
+import random
+
+score = 0
+x = True
+while x == True:
+    user = input("Choose Rock, Paper, Scissors\n>")
+
+    # Make random selection
+    rps = ["Rock","Paper","Scissors"]
+    choice = random.choice(rps)
+
+    # Output Selection
+    print("You chose", user)
+    print("I chose", choice)
+    if user == "Rock" and choice == "Paper":
+        print("I win")
+        score = score - 1
+    elif user == "Rock" and choice == "Scissors":
+        print ("You win")
+        score = score + 1
+    elif user == choice:
+        print("Draw")
+    elif user == "Scissors" and choice == "Paper":
+        print("You win")
+        score = score + 1
+    elif user == "Scissors" and choice == "Rock":
+        print("I win")
+        score=score-1
+    elif user =="Paper" and choice =="Rock":
+        print("You win")
+        score =score+1
+    elif user =="Paper" and choice =="Scissors":
+        print("I win")
+        score =score -1
+    else:
+        print("I don't understand what you typed")
+    print("Score is",score)
+    print("")
