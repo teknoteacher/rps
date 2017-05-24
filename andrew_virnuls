@@ -1,0 +1,42 @@
+# Rock Paper Scissors Game created by Andrew Virnuls
+
+from random import randint
+
+def won(wone):
+    global score
+    if wone:
+        print("You win!\n")
+        score += 1
+    else:
+        print("You lose!\n")
+        score -= 1
+
+choices = ("Paper","Scissors","Rock")
+player = -1
+score = 0
+go = 1
+
+while go < 11:
+    while player < 0 or player > 3:
+        player = input("Make your choice:\n- 0: Paper\n- 1: Scissors\n- 2: Rock\n- 3: Exit\n")
+        try:
+            player = int(player)
+        except:
+            player = -1
+        if player >= 0 and player < 3:
+            computer = randint(0,2)
+            print("You chose",choices[player],"and the computer chose",choices[computer])
+            if player == computer:
+                print("It's a draw!\n")
+            if player > computer:
+                won(player - computer != 2)
+            if player < computer:
+                won(computer - player == 2)
+        elif player == 3:
+            go = go * 12
+    go += 1
+    player = -1
+
+if go > 11:
+    go = int(go / 12)
+print("After",go-1,"game(s) your score is",score)
